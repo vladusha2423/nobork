@@ -1,0 +1,136 @@
+﻿body {
+    background: #3A3330;
+}
+
+nav {
+    background: #26211E;
+}
+
+h3 {
+    color: #9d9390;
+}
+
+.navbar-light .navbar-brand {
+    color: white;
+}
+
+    .navbar-light .navbar-brand:hover {
+        color: darkgray;
+    }
+
+.nav-container {
+    width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.main {
+    /*width: 1000px;*/
+    margin: auto;
+}
+
+.content {
+}
+
+#filter {
+    padding-top: 30px;
+}
+
+.card {
+    background: #2A2523;
+}
+
+.btn {
+    color: white;
+}
+
+.card-body {
+    background: #9d9390;
+}
+
+@media (max-width: 1000px) {
+    .main {
+        width: 100%;
+    }
+
+    .nav-container {
+        width: 100%;
+    }
+}
+
+#types {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.one-type {
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    background-size: cover;
+    margin: 35px;
+}
+
+    .one-type > p {
+        margin-top: 440px;
+        margin-left: 30px;
+    }
+
+.to-type {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+    .to-type:hover {
+        text-decoration: none;
+        color: #ef6f2e;
+        font-size: 25px;
+        transition: 0.5s;
+    }
+
+#start-blender {
+    background-image: url("http://st.bork.ru/components/product/kitchen/blenders/blenders.jpg");
+}
+
+#start-grill {
+    background-image: url("http://st.bork.ru/components/product/kitchen/grills/grills.jpg");
+}
+
+#start-coffee-machine {
+    background-image: url("http://st.bork.ru/components/product/kitchen/coffee-machines/coffee-machines.jpg");
+}
+
+#start-juicer {
+    background-image: url("http://st.bork.ru/components/product/kitchen/juicers/juicers.jpg");
+}
+
+#start-microwave {
+    background-image: url("http://st.bork.ru/components/product/kitchen/ovens/ovens.jpg");
+}
+
+#start-mixers {
+    background-image: url("http://st.bork.ru/components/product/kitchen/mixers/mixers.jpg");
+}
+
+#start-meat-grinder {
+    background-image: url("http://st.bork.ru/components/product/kitchen/mincers/mincers.jpg");
+}
+
+#start-scales {
+    background-image: url("http://st.bork.ru/components/product/kitchen/kitchen_scales/kitchen_scales.jpg");
+}
+
+#start-slow-cooker {
+    background-image: url("http://st.bork.ru/components/product/kitchen/multi-cookers/multi-cookers.jpg");
+}
+
+#start-toasters {
+    background-image: url("http://st.bork.ru/components/product/kitchen/toasters/toasters.jpg");
+}

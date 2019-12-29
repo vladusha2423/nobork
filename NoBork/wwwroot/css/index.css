@@ -1,0 +1,142 @@
+body{
+    background: #3A3330;
+
+}
+nav{
+    background: #26211E;
+}
+h3{
+    color: #9d9390;
+}
+.navbar-light .navbar-brand{
+    color: white;
+}
+.navbar-light .navbar-brand:hover{
+    color: darkgray;
+}
+.nav-container{
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+.main{
+    width: 1200px;
+    margin: auto;
+}
+.content{
+}
+#filter{
+    padding-top: 30px;
+}
+#collapse1 input{
+    width: 110px;
+}
+#collapse1 .form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#collapse1 label{
+    margin-left: 10px;
+}
+.form-container{
+    margin-top: 10px;
+}
+.input-submit{
+    margin-top: 10px;
+    width: 100%;
+}
+.input-submit input{
+    margin: auto;
+}
+.card{
+    background: #2A2523;
+}
+.btn{
+    color: white;
+}
+.card-body{
+    background: #9d9390;
+}
+.product{
+    width: 90%;
+    height: 350px;
+    margin-top: 30px;
+    transition: all 0.8s;
+}
+.product h3{
+    color: black;
+}
+.product-photo{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: #26211E;
+    height: 100%;
+    width: 60%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+.product-photo img{
+    margin-top: -60px;
+    transition: all 0.8s;
+}
+    .product-photo:hover img {
+        width: 250px;
+        transition: all 0.8s;
+    }
+.product-info{
+    width: 40%;
+    height: 100%;
+    background: #9d9390;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.product-info-point{
+    width: 90%;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #494340;
+}
+.product-info-point.product-info-point-last {
+    margin-top: 10px;
+    padding-bottom: 20px;
+    border-bottom: 0;
+}
+.product-info-point.product-info-point-first {
+    margin-top: 10px;
+    border-bottom: 0;
+    padding-top: 20px;
+}
+.product-title, .product-price{
+    position: relative;
+    color: white;
+    font-size: 20px;
+}
+/*.product-price{
+    top: 330px;
+    left: 320px;
+}
+.product-title{
+    top: 330px;
+    left: 60px;
+}*/
+@media(max-width: 1200px){
+    .main{
+        width: 100%;
+    }
+    .nav-container{
+        width: 100%;
+    }
+}

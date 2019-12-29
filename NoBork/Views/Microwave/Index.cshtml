@@ -1,0 +1,60 @@
+﻿@model List<Microwave>
+
+<div class="text-center">
+    <p>Microwaves:</p>
+    @foreach (Microwave mw in Model)
+    {
+        <p>@mw.Name</p>
+    }
+</div>
+<div class="filters">
+    <form action="/Microwave/Search" method="post">
+        <div class="search-string-field">
+            <input id="search" type="text" name="Value" value="" placeholder="Enter a string to search">
+            <label for="search">Поиск</label>
+        </div>
+        <div class="search-string-field">
+            <input class="submit-button" type="submit" value="Find">
+        </div>
+    </form>
+    <form action="/Microwave/Sort" method="post">
+        <div class="sort-radio-buttons">
+            <div class="sort-radio-buttons-item" onclick="document.location.href = 'http://localhost:5000/Blender/Sort?sort=1'">
+                <input id="sort-alphabet" type="radio" name="Sort" value="1">
+                <label for="sort-alphabet">По алфавиту</label>
+            </div>
+            <div class="sort-radio-buttons-item" onclick="document.location.href = 'http://localhost:5000/Blender/Sort?sort=2'">
+                <input id="sort-price" type="radio" name="Sort" value="2">
+                <label for="sort-price">По цене</label>
+            </div>
+        </div>
+    </form>
+    <form action="/Microwave/Filter" method="post">
+        <h4>Volume:</h4>
+        <div class="chekbox-two">
+            <label class="checkbox">
+                <input type="checkbox" name="Volume" value="15">
+                <span class="checkbox__icon"></span>
+                10-20
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" name="Volume" value="25">
+                <span class="checkbox__icon"></span>
+                20-30
+            </label>
+            <label class="checkbox">
+                <input type="checkbox" name="Volume" value="35">
+                <span class="checkbox__icon"></span>
+                30-40
+            </label>
+        </div>
+        <div class="filter-form-point">
+            <input class="price-input" id="filter-min-price" type="text" name="MinPrice" value="0" />
+            <input class="price-input" id="filter-min-price" type="text" name="MaxPrice" value="100000" />
+        </div>
+        <div class="filter-form-point">
+            <input class="submit-button" type="submit" value="Yes!">
+        </div>
+    </form>
+    <a href="/home">Back to main page</a>
+</div>

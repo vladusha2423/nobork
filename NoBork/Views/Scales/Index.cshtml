@@ -1,0 +1,137 @@
+﻿@model List<Scales>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NoBork - Scales</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/index.css" />
+</head>
+<body>
+    <nav class="navbar navbar-light">
+        <div class="nav-container">
+            <a class="navbar-brand">NoBork</a>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-outline-light" onclick="document.location.href = 'http://localhost:5000/Scales/Sort?sort=1'">По названию</button>
+                <button type="button" class="btn btn-outline-light" onclick="document.location.href = 'http://localhost:5000/Scales/Sort?sort=2'">По цене</button>
+            </div>
+            <form class="form-inline" action="Search" method="post">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="Value" value="">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="main row">
+        <div id="filter" class="col-4">
+            <div class="accordion" id="accordionExample">
+                <form action="/Scales/Filter" method="post">
+                    <div class="card">
+                        <div class="card-header" id="heading1">
+                            <h2 class="mb-0">
+                                <button class="btn" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapseOne">
+                                    Цена
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="form-container">
+                                    <div class="form-group row">
+                                        <input type="text" class="form-control" id="minPrice" name="MinPrice" value="0" aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="form-group row">
+                                        <input type="text" class="form-control" id="maxPrice" name="MaxPrice" value="100000" aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="input-submit">
+                                        <input class="btn btn-dark" type="submit" value="Применить">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="heading4">
+                            <h2 class="mb-0">
+                                <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapseThree">
+                                    Максимальный вес
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="MaxWeight" value="5" id="Volume1">
+                                    <label class="form-check-label" for="Volume1">
+                                        5 кг
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="MaxWeight" value="8" id="Volume2">
+                                    <label class="form-check-label" for="Volume2">
+                                        8 кг
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="MaxWeight" value="10" id="Volume2">
+                                    <label class="form-check-label" for="Volume2">
+                                        10 кг
+                                    </label>
+                                </div>
+                                <div class="input-submit">
+                                    <input class="btn btn-dark" type="submit" value="Применить">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <div class="content col-8">
+            @foreach (Scales b in Model)
+            {
+                <div class="product">
+                    <div class="product-photo">
+                        <img src="http://st.bork.ru/photos_resized/common/220_220/9201/1_9201.png" alt="">
+
+                    </div>
+                    <!--
+                    -->
+                    <div class="product-info">
+                        <div class="product-info-point product-info-point-first">
+                            <h3>@b.Name</h3>
+                        </div>
+                        <div class="product-info-point">
+                            <h6>Размер: <b>@b.Width x @b.Length x @b.Height см</b></h6>
+                        </div>
+                        <div class="product-info-point">
+                            <h6>Вес: <b>@b.Weight</b></h6>
+                        </div>
+                        <div class="product-info-point">
+                            <h6>Мощность: <b>@b.Power Вт</b></h6>
+                        </div>
+                        <div class="product-info-point">
+                            <h6>Страна: <b>@b.Country</b></h6>
+                        </div>
+                        <div class="product-info-point product-info-point-last">
+                            <h3>@b.Price Руб.</h3>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
